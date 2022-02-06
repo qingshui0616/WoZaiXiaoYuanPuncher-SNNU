@@ -199,10 +199,8 @@ class WoZaiXiaoYuanPuncher:
     # 返回地址信息
 
 if __name__ == '__main__':
-    # 读取配置文件
-    configs = utils.processJson("config.json").read()
-    #找不到cache，登录+打卡
-    wzxy = WoZaiXiaoYuanPuncher(configs)
+
+    wzxy = WoZaiXiaoYuanPuncher()
     addr = wzxy.requestAddress()
     sign_data = wzxy.getLocationData(addr)
     print(sign_data)
