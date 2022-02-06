@@ -117,7 +117,7 @@ class WoZaiXiaoYuanPuncher:
         else:
             print(response)
             print("打卡失败")
-
+ 
     # 获取打卡结果
     def getResult(self):
         res = self.status_code
