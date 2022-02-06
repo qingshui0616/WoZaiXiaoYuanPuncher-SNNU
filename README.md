@@ -8,62 +8,20 @@
 
 **请勿骚扰他人，包括但不限于：在已有issue中回复无关内容、在我的个人博客中留言脚本相关问题。谢谢合作。**
 
-<details>
-<summary><b>更新日志</b></summary>
-
-- 2022.01.24 新增 支持自定义打卡问题的选项或回答。
-
-- 2021.12.25 修复 pushplus 的推送问题。
-
-- 2021.11.17 新增 支持基于 [go-cqhttp](https://github.com/Mrs4s/go-cqhttp) 的 QQ 机器人推送。
-
-- 2021.10.08 新增 支持钉钉机器人推送。
-  > 🎉 感谢 [@baifan97](https://github.com/baifan97) 的贡献！
-
-- 2021.09.28 修复无法更新 jwsession 的问题。
-
-- 2021.09.19 新增 支持多账户。
-  > **⚠重要提醒：** 该版本对配置文件中调用配置的默认参数进行了修改，请旧有用户 Fetch 最新代码后，删除原有的 Secret 和 Environment，并参考新的文档重新配置所有参数。
-
-- 2021.09.03 新增 支持喵推送。
-
-- 2021.08.04 新增 支持多种通知方式（Serverchan-Turbo、pushplus、Bark）。
-  > 🎉 感谢 [@LeslieLeung](https://github.com/LeslieLeung) 的贡献！
-  
-</details>
-
 ## 关于本脚本
 
-- 添加脚本 `wzxy-healthcheck.py`，适配部分学校的打卡项目“健康打卡”。
 
-  > 关于本项目中的两个脚本：
-  >
-  > - `wzxy-dailyreport.py`，对应打卡项目“日检日报”（一天多时段打卡，需要提交位置信息与体温信息）。
-  >
   > - `wzxy-healthcheck.py`，对应打卡项目“健康打卡”（一天只需打卡一次，仅需提交位置信息）。
-  >
-  > 两个脚本请按需启用，详见下方使用指南。
 
 - 利用 [actions/cache@v2](https://github.com/marketplace/actions/cache) 实现缓存 jwsession，避免频繁登录可能导致的账号登录问题。
 
-- 利用 Github Action 的 [Secrets](https://docs.github.com/cn/actions/reference/encrypted-Secrets) 加密储存所有配置信息，任何人都无法从项目仓库中直接读取这些敏感信息。
-
-- 支持多用户/多地点打卡，利用 Github Action 的 [Environment](https://docs.github.com/cn/actions/reference/environments) 实现多配置文件的储存。
-
 - 对原代码部分逻辑结构进行修改优化。
 
-- 支持多种通知方式（Serverchan-Turbo、pushplus、Bark、喵推送、QQ机器人（go-cqhttp）、钉钉机器人）
+- 支持通知方式（pushplus）
 
 欢迎 Issue & Pull request ！
 
 ## 使用指南
-
-### Step0 准备工作
-
-- 对小程序进行抓包，抓取自己的打卡数据，请参见文末[抓包教程](#抓包教程)。
-- 在小程序 我的-设置 中修改自己的密码。
-  - 注意：密码为6-12位
-  - 修改完成后请勿马上重新登陆
 
 ### Step1 Fork本仓库
 
