@@ -203,7 +203,6 @@ if __name__ == '__main__':
     wzxy = WoZaiXiaoYuanPuncher()
     addr = wzxy.requestAddress()
     sign_data = wzxy.getLocationData(addr)
-    print(sign_data)
     if not os.path.exists('.cache'):
         print("找不到cache文件，正在使用账号信息登录...")
         loginStatus = wzxy.login()
