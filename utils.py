@@ -3,7 +3,7 @@ import datetime
 import time
 import pytz
 import random
-
+import requests
 # 获取当前时间(云函数的运行环境是 0 时区时间，需要 +8 转化为北京时间）
 def getCurrentTime():
   return datetime.datetime.now(pytz.timezone('Asia/Shanghai')).strftime("%Y-%m-%d %H:%M:%S")
@@ -36,4 +36,12 @@ class processJson:
     with open(self.path,'w',encoding='utf-8') as file:   
         json.dump(data,file,ensure_ascii = False,indent = 2)
     file.close()
-   
+# 地理/逆地理编码请求
+def geoCode(url,params):
+  _params = {
+    **params,
+    "key": "819cfa3cf713874e1757cba0b50a0172",
+  }
+  response = requests.get(url=url, params=_params)
+  res = json.loads((response.text))
+  return res
