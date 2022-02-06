@@ -2,7 +2,7 @@
 
 
 
-使用教程：https://blog.csdn.net/qq_57001499/article/details/122800919
+使用教程：https://note.youdao.com/s/WZqpW2p5
 
 ## 声明
 - 我在校园自动打卡程序 陕西师范大学：[zimin9/WoZaiXiaoYuanPuncher](https://github.com/zimin9/WoZaiXiaoYuanPuncher) 的 Github Action 版。
